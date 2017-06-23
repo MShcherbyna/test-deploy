@@ -1,11 +1,5 @@
 <?php 
-	$mysqli = new mysqli("localhost", "root", "user", "test-deploy");
-	if ($mysqli->connect_errno) {
-	    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
-	// echo $mysqli->host_info . "\n";info
-	$mysqli->real_query("SELECT * FROM info");
-	$res = $mysqli->use_result();
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,14 +30,10 @@
 	<div class="container">
 		<header>
 			<h1>Test</h1>
-			<a href="/about_as.php">Home</a>
+			<a href="/">Home</a>
 		</header>
 		<div class="main">
-			<?php 
-				while ($row = $res->fetch_assoc()) {
-				   echo $row['text'];
-				}
-			?>
+		<?php echo "<h1>About As</h1>"?>
 		</div>
 	</div>
 </body>
