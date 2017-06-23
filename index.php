@@ -3,7 +3,9 @@
 	if ($mysqli->connect_errno) {
 	    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
-	// echo $mysqli->host_info . "\n";
+	// echo $mysqli->host_info . "\n";info
+	$mysqli->real_query("SELECT * FROM info");
+	$res = $mysqli->use_result();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +38,11 @@
 			<h1>Test</h1>
 		</header>
 		<div class="main">
-			
+			<?php 
+				while ($row = $res->fetch_assoc()) {
+				   echo $row['text'];
+				}
+			?>
 		</div>
 	</div>
 </body>
