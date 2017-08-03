@@ -6,6 +6,7 @@
 	// echo $mysqli->host_info . "\n";info
 	$mysqli->real_query("SELECT * FROM info");
 	$res = $mysqli->use_result();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +34,7 @@
 	</style>
 </head>
 <body>
+	<div class="test">test</div>
 	<div class="container">
 		<header>
 			<h1>Test</h1>
@@ -48,3 +50,4 @@
 	</div>
 </body>
 </html>
+
